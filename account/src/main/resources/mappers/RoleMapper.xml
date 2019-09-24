@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.account.mapper.RoleMapper">
+  <resultMap id="BaseResultMap" type="com.web.account.entity.Role">
+    <!--@mbg.generated-->
+    <id column="role_id" jdbcType="INTEGER" property="roleId" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    role_id, role_name, `uid`
+  </sql>
+  <select id="findByUid" resultMap="BaseResultMap">
+    select r.role_id , r.role_name
+    from role r
+    where r.uid = #{uid}
+  </select>
+</mapper>

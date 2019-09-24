@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MyBatisCodeHelperDatasource">
+    <option name="projectProfile">
+      <ProjectProfile>
+        <option name="javaMapperPackage" value="com.web.account.mapper" />
+        <option name="javaMapperPath" value="$PROJECT_DIR$/account/src/main/java" />
+        <option name="javaModelPackage" value="com.web.account.entity" />
+        <option name="javaModelPath" value="$PROJECT_DIR$/account/src/main/java" />
+        <option name="lastDatabaseCrudChooseModuleName" value="account" />
+        <option name="moduleNameToPackageAndPathMap">
+          <map>
+            <entry key="account">
+              <value>
+                <UserPackageAndPathInfoByModule>
+                  <option name="javaMapperPackage" value="com.web.account.mapper" />
+                  <option name="javaMapperPath" value="$PROJECT_DIR$/account/src/main/java" />
+                  <option name="javaModelPacakge" value="com.web.account.entity" />
+                  <option name="javaModelPath" value="$PROJECT_DIR$/account/src/main/java" />
+                  <option name="xmlPackage" value="mappers" />
+                  <option name="xmlPath" value="$PROJECT_DIR$/account/src/main/resources" />
+                </UserPackageAndPathInfoByModule>
+              </value>
+            </entry>
+            <entry key="springboot-app">
+              <value>
+                <UserPackageAndPathInfoByModule>
+                  <option name="javaMapperPackage" value="com.web.account.mapper" />
+                  <option name="javaMapperPath" value="$PROJECT_DIR$/src/main/java" />
+                  <option name="javaModelPacakge" value="com.web.account.entity" />
+                  <option name="javaModelPath" value="$PROJECT_DIR$/src/main/java" />
+                  <option name="xmlPackage" value="mappers" />
+                  <option name="xmlPath" value="$PROJECT_DIR$/src/main/resources" />
+                </UserPackageAndPathInfoByModule>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="tableGenerateConfigs">
+          <map>
+            <entry key="project:cron">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="cron_id" />
+                  <option name="javaModelName" value="Cron" />
+                  <option name="moduleName" value="springboot-app" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="project:footprint">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="foot_id" />
+                  <option name="javaModelName" value="Footprint" />
+                  <option name="moduleName" value="springboot-app" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="project:permission">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="Permission" />
+                  <option name="moduleName" value="account" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="project:role">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="role_id" />
+                  <option name="javaModelName" value="Role" />
+                  <option name="moduleName" value="account" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="project:role_user">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="RoleUser" />
+                  <option name="moduleName" value="account" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="project:user">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="uid" />
+                  <option name="javaModelName" value="User" />
+                  <option name="moduleName" value="account" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="test:home">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="uid" />
+                  <option name="javaModelName" value="Home" />
+                  <option name="moduleName" value="springboot-app" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="useLomBokOnModel" value="true" />
+        <option name="xmlMapperPackage" value="mappers" />
+        <option name="xmlMapperPath" value="$PROJECT_DIR$/account/src/main/resources" />
+      </ProjectProfile>
+    </option>
+  </component>
+</project>

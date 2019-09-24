@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.account.mapper.CronMapper" >
+
+    <resultMap id="BaseResultMap" type="com.web.account.entity.Cron" >
+        <!--@mbg.generated-->
+        <id column="cron_id" jdbcType="INTEGER" property="cronId" />
+        <result column="cron" jdbcType="VARCHAR" property="cron" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        cron_id, cron
+    </sql>
+
+    <select id="allCrons" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List" />
+        from cron
+    </select>
+
+</mapper>

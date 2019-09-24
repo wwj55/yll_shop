@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.account.mapper.FootPrintMapper">
+  <resultMap id="BaseResultMap" type="com.web.account.entity.FootPrint">
+    <!--@mbg.generated-->
+    <id column="foot_id" jdbcType="INTEGER" property="footId" />
+    <result column="shop_id" jdbcType="INTEGER" property="shopId" />
+    <result column="uid" property="uid"/>
+    <result column="days" property="days"/>
+    <result column="mouth" property="mouth"/>
+    <result column="browse_time" jdbcType="TIMESTAMP" property="browseTime" />
+    <result column="views" jdbcType="INTEGER" property="views" />
+    <result column="id_delete" jdbcType="INTEGER" property="idDelete" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    foot_id, shop_id, browse_time, views, id_delete
+  </sql>
+<!--  查询所有的足迹信息-->
+  <select id="findAll" resultMap="BaseResultMap">
+    select fp.browse_time , fp.foot_id
+    from footprint fp
+    where fp.id_delete = 1;
+  </select>
+<!--  更新过期的足迹信息-->
+  <update id="updateOverdue">
+    update footprint fp
+    set fp.is_delete = 0
+    where fp.is_delete = 1 and fp.foot_id = #{footId}
+  </update>
+<!--根据uid查询所有的足迹信息-->
+  <select id="findByUid" resultMap="BaseResultMap">
+    select fp.shop_id , fp.browse_time , fp.days , fp.mouth
+    from footprint fp
+    where fp.uid = #{uid}
+    order by fp.browse_time desc
+    order by fp.views desc
+  </select>
+<!--查询该用户商品的最新足迹信息-->
+  <select id="findNewest" resultMap="BaseResultMap">
+    select max(browse_time)
+    from footprint fp
+    where fp.shop_id = #{shopId} and fp.uid = #{uid}
+  </select>
+<!--插入新的足迹信息-->
+  <insert id="insertPoint">
+    insert into footprint(shop_id , uid , days , mouth) values (#{shop_id} , #{uid} , #{days} , #{mouth})
+  </insert>
+<!--更新足迹浏览次数-->
+  <update id="updateViews">
+    update footprint fp
+    set fp.views = fp.views + 1
+    where fp.shop_id = #{shop_id} and fp.uid = #{uid}
+  </update>
+</mapper>

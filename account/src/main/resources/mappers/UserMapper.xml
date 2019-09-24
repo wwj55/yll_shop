@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.account.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.web.account.entity.User">
+    <!--@mbg.generated-->
+    <id column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    `uid`, username, `password`
+  </sql>
+
+  <select id="findByName" resultMap="BaseResultMap">
+    select u.username , u.password , u.uid
+    from user u
+    where u.is_delete = 1 and u.username = #{username};
+  </select>
+
+<!--  需要获取用户的id-->
+  <insert id="insertUser">
+    insert into user(username , password) values (#{username} , #{password})
+  </insert>
+</mapper>
